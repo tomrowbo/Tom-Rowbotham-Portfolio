@@ -9,31 +9,4 @@
   padding: 0 2rem;
 }
 
-.main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.title {
-  color: white;
-  text-decoration: none;
-  font-size: 4rem;
-  text-align: center;
-}
-
-.constructionDiv {
-  padding: 20px;
-}
-
-/* Responsive layout - makes a one column-layout instead of two-column layout */
-@media (max-width: 800px) {
-  .main {
-    flex-direction: column;
-  }
-}
-
 

@@ -9,6 +9,7 @@ export default function UnderConstructionBody() {
                     src="/constructionPicArt.png"
                     width={500}
                     height={400}
+                    alt="Under Construction Image"
                 />
             </div>
             <h1 className={styles.title}>Coming Soon...</h1>

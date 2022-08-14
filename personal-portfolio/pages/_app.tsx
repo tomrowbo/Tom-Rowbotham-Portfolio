@@ -8,20 +8,17 @@ import NavbarToggle from "react-bootstrap/NavbarToggle";
 import MenuIcon from '@mui/icons-material/Menu';
 import React from "react";
 import {
-    AppBar,
+    AppBar, Avatar,
     Box, Button,
     Divider, Drawer,
     IconButton,
     List,
     ListItem,
     ListItemButton,
-    ListItemText, Toolbar,
+    ListItemText, Menu, MenuItem, Toolbar, Tooltip,
     Typography
 } from "@mui/material";
 
-const logoSource = "/logo.png"
-const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Projects', 'Contact'];
 
 function MyApp({Component, pageProps}: AppProps) {
     const {window} = pageProps;
@@ -31,17 +28,28 @@ function MyApp({Component, pageProps}: AppProps) {
         setMobileOpen(!mobileOpen);
     };
 
+    const logoSource = "/logo.png"
+    const drawerWidth = 240;
+    const navItems = ['Home', 'About', 'Projects', 'Contact'];
+    const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+
+    const handleCloseNavMenu = () => {
+        setAnchorElNav(null);
+    };
+
+
     const logo = (
         <img
             src={logoSource}
             width="100"
             height="100"
-            className="d-inline-block align-top"
+            className="d-inline-block align-top drawer-logo"
             alt="React Bootstrap logo"
         />);
 
     const drawer = (
-        <Box color="white" onClick={handleDrawerToggle} sx={{textAlign: 'center', backgroundColor: "#041B2D"}}>
+        <Box color="white" onClick={handleDrawerToggle}
+             sx={{textAlign: 'center', backgroundColor: "#041B2D", height: "100%"}}>
             {logo}
             <Divider/>
             <List>
@@ -58,33 +66,98 @@ function MyApp({Component, pageProps}: AppProps) {
 
     const container = window !== undefined ? () => window().document.body : undefined;
 
-
     return (
 
-
         <div className="background-gradient">
-            <AppBar component="nav" color="transparent" elevation={0}>
-                <Toolbar>
-                    <Container>
-                        <IconButton
-                            style={{ color: 'white' }}
-                            aria-label="open drawer"
-                            edge="start"
-                            onClick={handleDrawerToggle}
-                            sx={{mr: 2, display: {sm: 'none'}}}
+
+                <AppBar className="appbar" component="nav" color="transparent" elevation={0}>
+                <Container>
+                    <Toolbar disableGutters>
+                        <Box
+                            component="a"
+                            href="/"
+                            sx={{
+                                mr: 2,
+                                display: { xs: 'none', md: 'flex' },
+                            }}
                         >
-                            <MenuIcon/>
-                        </IconButton>
-                        {/*Logo goes here*/}
-                        <Box sx={{display: {xs: 'none', sm: 'block'}}}>
-                            {navItems.map((item) => (
-                                <Button key={item} sx={{color: '#fff'}}>
-                                    {item}
+                            <img
+                                src={logoSource}
+                                width="30"
+                                height="30"
+                                className="d-inline-block align-top"
+                                alt="React Bootstrap logo"
+                            />
+                        </Box>
+
+                        <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' },color:"white"}}>
+                            <IconButton
+                                size="large"
+                                aria-label="account of current user"
+                                aria-controls="menu-appbar"
+                                aria-haspopup="true"
+                                onClick={handleDrawerToggle}
+                                color="inherit"
+                            >
+                                <MenuIcon />
+                            </IconButton>
+                            <Menu
+                                id="menu-appbar"
+                                anchorEl={anchorElNav}
+                                anchorOrigin={{
+                                    vertical: 'bottom',
+                                    horizontal: 'left',
+                                }}
+                                keepMounted
+                                transformOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'left',
+                                }}
+                                open={Boolean(anchorElNav)}
+                                onClose={handleCloseNavMenu}
+                                sx={{
+                                    display: { xs: 'block', md: 'none' },
+                                }}
+                            >
+                                {navItems.map((page) => (
+                                    <MenuItem key={page} onClick={handleCloseNavMenu}>
+                                        <Typography textAlign="center">{page}</Typography>
+                                    </MenuItem>
+                                ))}
+                            </Menu>
+                        </Box>
+                        <Box
+                            component="a"
+                            href="/"
+                            sx={{
+                                mr: 2,
+                                display: { xs: 'flex', md: 'none' },
+                                flexGrow: 1
+                            }}
+                        >
+                            <img
+                                src={logoSource}
+                                width="30"
+                                height="30"
+                                className="d-inline-block align-top"
+                                alt="React Bootstrap logo"
+                            />
+                        </Box>
+                        <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                            {navItems.map((page) => (
+                                <Button
+                                    key={page}
+                                    onClick={handleCloseNavMenu}
+                                    sx={{ my: 2, color: 'white', display: 'block' }}
+                                >
+                                    {page}
                                 </Button>
                             ))}
                         </Box>
-                    </Container>
-                </Toolbar>
+
+
+                    </Toolbar>
+                </Container>
             </AppBar>
             <Box component="nav">
                 <Drawer
@@ -101,6 +174,7 @@ function MyApp({Component, pageProps}: AppProps) {
                     }}
                 >
                     {drawer}
+
                 </Drawer>
             </Box>
 

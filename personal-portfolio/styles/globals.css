@@ -19,8 +19,22 @@ a {
   html {
     color-scheme: dark;
   }
+
   body {
     color: white;
     background: black;
   }
+}
+
+.top-nav {
+  background-color: #041b2d;
+}
+
+.drawer-logo {
+  padding: 20px;
+}
+
+.navbar-logo {
+  /*mr: 2;*/
+  /*display: {xs: 'none', md: 'flex'};*/
 }

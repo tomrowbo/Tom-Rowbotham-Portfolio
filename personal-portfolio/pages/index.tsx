@@ -1,28 +1,41 @@
-import type {NextPage} from 'next'
-import Head from 'next/head'
+import type { NextPage } from "next";
+import Head from "next/head";
 
-import styles from '../styles/Home.module.css'
+import styles from "../styles/Home.module.css";
 import UnderConstructionBody from "../components/construction/UnderConstructionBody";
-import {Button} from "react-bootstrap";
 
 const Home: NextPage = () => {
-    return (
-        <div className={styles.container}>
-            <Head>
-                <title>Tom Rowbotham Portfolio</title>
-                <meta name="description" content="Tom Rowbotham, Software Engineer"/>
-                <link rel="icon" href="/favicon.ico"/>
-                <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
-                <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
-                <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
-                <link rel="manifest" href="/site.webmanifest"/>
-                <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#041b2d"/>
-                <meta name="msapplication-TileColor" content="#2b5797"/>
-                <meta name="theme-color" content="#041b2d"/>
-            </Head>
-            <UnderConstructionBody/>
-        </div>
-    )
-}
+  return (
+    <div className={styles.container}>
+      <Head>
+        <title>Tom Rowbotham Portfolio</title>
+        <meta name="description" content="Tom Rowbotham, Software Engineer" />
+        <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#041b2d" />
+        <meta name="msapplication-TileColor" content="#2b5797" />
+        <meta name="theme-color" content="#041b2d" />
+      </Head>
+      <UnderConstructionBody />
+    </div>
+  );
+};
 
-export default Home
+export default Home;

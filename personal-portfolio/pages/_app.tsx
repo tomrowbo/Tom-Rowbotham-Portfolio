@@ -1,32 +1,24 @@
 import '../styles/globals.css'
 import type {AppProps} from 'next/app'
 import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
 import "bootstrap/dist/css/bootstrap.min.css";
-import {Nav, NavDropdown} from "react-bootstrap";
-import NavbarToggle from "react-bootstrap/NavbarToggle";
 import MenuIcon from '@mui/icons-material/Menu';
 import React from "react";
 import {
-    AppBar, Avatar,
+    AppBar,
     Box, Button,
-    Divider, Drawer,
+    Drawer,
     IconButton,
-    List,
-    ListItem,
-    ListItemButton,
-    ListItemText, Menu, MenuItem, Toolbar, Tooltip,
+    Menu, MenuItem, Toolbar,
     Typography
 } from "@mui/material";
+import NavDrawerContent from '../components/navigation/NavDrawerContent';
 
 
 function MyApp({Component, pageProps}: AppProps) {
     const {window} = pageProps;
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
-    const handleDrawerToggle = () => {
-        setMobileOpen(!mobileOpen);
-    };
 
     const logoSource = "/logo.png"
     const drawerWidth = 240;
@@ -37,32 +29,9 @@ function MyApp({Component, pageProps}: AppProps) {
         setAnchorElNav(null);
     };
 
-
-    const logo = (
-        <img
-            src={logoSource}
-            width="100"
-            height="100"
-            className="d-inline-block align-top drawer-logo"
-            alt="React Bootstrap logo"
-        />);
-
-    const drawer = (
-        <Box color="white" onClick={handleDrawerToggle}
-             sx={{textAlign: 'center', backgroundColor: "#041B2D", height: "100%"}}>
-            {logo}
-            <Divider/>
-            <List>
-                {navItems.map((item) => (
-                    <ListItem key={item} disablePadding>
-                        <ListItemButton sx={{textAlign: 'center'}}>
-                            <ListItemText primary={item}/>
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-            </List>
-        </Box>
-    );
+    const handleDrawerToggle = () => {
+        setMobileOpen(!mobileOpen);
+    };
 
     const container = window !== undefined ? () => window().document.body : undefined;
 
@@ -173,7 +142,7 @@ function MyApp({Component, pageProps}: AppProps) {
                         '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth},
                     }}
                 >
-                    {drawer}
+                    <NavDrawerContent handleDrawerToggle={ () => handleDrawerToggle() } navItems = {navItems} />
 
                 </Drawer>
             </Box>

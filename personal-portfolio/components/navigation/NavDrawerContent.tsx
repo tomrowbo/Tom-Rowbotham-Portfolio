@@ -38,8 +38,8 @@ const NavDrawerContent: React.FC<ChildProps> = ({
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+            <ListItemButton sx={{ textAlign: "center"}}>
+              <ListItemText primaryTypographyProps={{fontSize: '18px'}}  primary={item}/>
             </ListItemButton>
           </ListItem>
         ))}

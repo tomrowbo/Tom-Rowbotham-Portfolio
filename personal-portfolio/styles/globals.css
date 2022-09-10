@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: #041b2d;
 }
 
 a {
@@ -37,4 +38,15 @@ a {
 .navbar-logo {
   /*mr: 2;*/
   /*display: {xs: 'none', md: 'flex'};*/
+}
+
+.container {
+  background: #041b2d;
+
+  /*/* Chrome 10-25, Safari 5.1-6 */
+  /*background: -webkit-linear-gradient(to top, rgba(4, 27, 45, 1), rgba(0, 78, 154, 1));*/
+
+  /*/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /*background: linear-gradient(to top, rgba(4, 27, 45, 1), rgba(0, 78, 154, 1));*/
+  padding: 0 2rem;
 }

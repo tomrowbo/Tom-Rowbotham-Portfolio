@@ -3,20 +3,23 @@ import type {AppProps} from "next/app";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import CustomNavBar from "../components/navigation/CustomNavBar";
-import {createTheme, ThemeProvider} from "@mui/material";
+import {createTheme, responsiveFontSizes, ThemeProvider} from "@mui/material";
 
 function MyApp({Component, pageProps}: AppProps) {
     const {window} = pageProps;
     const container =
         window !== undefined ? () => window().document.body : undefined;
 
-    const theme = createTheme({
+    const theme = responsiveFontSizes(createTheme({
         typography: {
             fontFamily: [
                 '"Baloo Bhaijaan 2"', "cursive"
             ].join(','),
+            h1: {
+                fontWeight:400
+            }
         }
-    });
+    }))
 
     return (
         <ThemeProvider theme={theme}>

@@ -28,9 +28,6 @@ const Home: NextPage = () => {
                     sizes="16x16"
                     href="/favicon-16x16.png"
                 />
-                <link rel="preconnect" href="https://fonts.googleapis.com"/>
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=""/>
-                <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
                 <link rel="manifest" href="/site.webmanifest"/>
                 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#041b2d"/>
                 <meta name="msapplication-TileColor" content="#2b5797"/>

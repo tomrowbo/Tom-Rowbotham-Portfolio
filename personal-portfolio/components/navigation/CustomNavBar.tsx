@@ -1,7 +1,7 @@
 import {
   AppBar,
   Box,
-  Button,
+  Button, createTheme,
   Drawer,
   IconButton,
   Menu,
@@ -34,6 +34,14 @@ const CustomNavBar: React.FC<ChildProps> = ({ container }) => {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+
+  const theme = createTheme({
+    typography: {
+      fontFamily: [
+        'Baloo 2',
+      ].join(','),
+    }
+  });
 
   return (
     <div>
@@ -79,30 +87,7 @@ const CustomNavBar: React.FC<ChildProps> = ({ container }) => {
               >
                 <MenuIcon />
               </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: "block", md: "none" },
-                }}
-              >
-                {navItems.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
+
             </Box>
             <Box
               component="a"
@@ -127,6 +112,7 @@ const CustomNavBar: React.FC<ChildProps> = ({ container }) => {
                   key={page}
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, pl: 6, pr: 6, color: "white", display: "block" }}
+                  size="large"
                 >
                   {page}
                 </Button>
@@ -145,7 +131,7 @@ const CustomNavBar: React.FC<ChildProps> = ({ container }) => {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: "block", sm: "none" },
+            display: { xs: "block", md: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,

@@ -4,7 +4,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import CustomNavBar from "../components/navigation/CustomNavBar";
 import {createTheme, responsiveFontSizes, ThemeProvider} from "@mui/material";
-import {Head} from "next/document";
 
 function MyApp({Component, pageProps}: AppProps) {
     const {window} = pageProps;

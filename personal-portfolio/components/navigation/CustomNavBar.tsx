@@ -112,6 +112,7 @@ const CustomNavBar: React.FC<ChildProps> = ({ container }) => {
                   key={page}
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, pl: 6, pr: 6, color: "white", display: "block" }}
+                  size="large"
                 >
                   {page}
                 </Button>

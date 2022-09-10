@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import CustomNavBar from "../components/navigation/CustomNavBar";
 import {createTheme, responsiveFontSizes, ThemeProvider} from "@mui/material";
+import {Head} from "next/document";
 
 function MyApp({Component, pageProps}: AppProps) {
     const {window} = pageProps;
@@ -16,19 +17,19 @@ function MyApp({Component, pageProps}: AppProps) {
                 '"Baloo Bhaijaan 2"', "cursive"
             ].join(','),
             h1: {
-                fontWeight:400
+                fontWeight: 400
             }
         }
     }))
 
     return (
-        <ThemeProvider theme={theme}>
-            <div className="background-gradient">
-                <CustomNavBar container={container}/>
+            <ThemeProvider theme={theme}>
+                <div className="background-gradient">
+                    <CustomNavBar container={container}/>
 
-                <Component {...pageProps} />
-            </div>
-        </ThemeProvider>
+                    <Component {...pageProps} />
+                </div>
+            </ThemeProvider>
     );
 }
 

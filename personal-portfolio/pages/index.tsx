@@ -5,6 +5,7 @@ import styles from "../styles/Home.module.css";
 import UnderConstructionBody from "../components/construction/UnderConstructionBody";
 import Image from "next/image";
 import {Box, Typography} from "@mui/material";
+import Typewriter from "typewriter-effect";
 
 const Home: NextPage = () => {
     return (
@@ -20,8 +21,17 @@ const Home: NextPage = () => {
                 <div>
                     <Typography variant="h2" color="#EA4492">Hello, my name is</Typography>
                     <Typography variant="h1" color="white"><b>Tom Rowbotham</b></Typography>
-                    <Typography color="white">I am a <b>21</b> year old Software Engineer with experience on multiple projects, technology stacks and teams.
-                        I have a passion for creating applications and always eager to work with the latest technologies. </Typography>
+                    <div className={styles.typewriter}>
+                        <Typewriter
+                            onInit={(typewriter) => {
+                                typewriter.changeDelay(30)
+                                    .typeString("I am a <b>21</b> year old Software Engineer with experience on multiple projects, technology stacks and teams." +
+                                        " I have a passion for creating applications and always eager to work with the latest technologies.")
+                                    .start();
+                            }}
+                        />
+
+                    </div>
                 </div>
             </main>
         </Box>

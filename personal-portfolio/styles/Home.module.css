@@ -38,8 +38,24 @@
 }
 
 /* Responsive layout - makes a one column-layout instead of two-column layout */
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   .main {
     flex-direction: column;
+  }
+
+  .typewriter{
+    height: 200px;
+  }
+}
+
+.typewriter{
+  font-family: "Baloo Bhaijaan 2", cursive;
+  color: white;
+}
+
+@media (min-width: 1000px) {
+  .typewriter {
+    width:750px;
+    height: 50px;
   }
 }

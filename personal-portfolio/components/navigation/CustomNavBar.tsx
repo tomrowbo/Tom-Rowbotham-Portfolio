@@ -48,8 +48,10 @@ const CustomNavBar: React.FC<ChildProps> = ({ container }) => {
       <AppBar
         className="appbar"
         component="nav"
-        color="transparent"
+        color= "transparent"
+        position="sticky"
         elevation={0}
+        sx={{ bgcolor: "#041B2D"}}
       >
         <Container>
           <Toolbar disableGutters>

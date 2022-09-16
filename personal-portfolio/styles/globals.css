@@ -27,10 +27,6 @@ a {
   }
 }
 
-.top-nav {
-  background-color: #041b2d;
-}
-
 .drawer-logo {
   padding: 20px;
 }
@@ -41,12 +37,5 @@ a {
 }
 
 .container {
-  background: #041b2d;
-
-  /*/* Chrome 10-25, Safari 5.1-6 */
-  /*background: -webkit-linear-gradient(to top, rgba(4, 27, 45, 1), rgba(0, 78, 154, 1));*/
-
-  /*/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  /*background: linear-gradient(to top, rgba(4, 27, 45, 1), rgba(0, 78, 154, 1));*/
   padding: 0 2rem;
 }
